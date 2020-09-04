@@ -24,12 +24,16 @@ SECRET_KEY = 'lkyh$%+o&gfnw8&o6*7bm+84l$3pyq0)=*@+k9awa56vf51+gm'
 
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.iofuner.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'blog',
+    'config',
+    'comment',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
