@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['www.iofuner.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'iofuner',
     'blog',
     'config',
     'comment',
