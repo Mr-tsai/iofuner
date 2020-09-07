@@ -53,11 +53,11 @@ class TagView(IndexView):
         """重写queryset，根据标签过滤"""
         queryset = super().get_queryset()
         tag_id = self.kwargs.get('tag_id')
-        return queryset.filter(tag_id=tag_id)
+        return queryset.filter(tag__id=tag_id)
 
 
 class PostDetailView(CommonViewMixin, DetailView):
     queryset = Post.latest_posts()
     template_name = 'blog/detail.html'
     context_object_name = 'post'
-    pk_url_kwarg = 'post.id'
+    pk_url_kwarg = 'post_id'
