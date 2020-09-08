@@ -36,7 +36,7 @@ class Category(models.Model):
         
         return {
             'navs': nav_categories,
-            'category': normal_categories,
+            'categories': normal_categories,
         }
 
 
