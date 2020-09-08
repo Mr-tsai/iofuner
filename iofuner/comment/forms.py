@@ -1,3 +1,4 @@
+import mistune
 from django import forms
 
 from .models import Comment
@@ -29,7 +30,7 @@ class CommentForm(forms.ModelForm):
         label = '内容',
         max_length = 500,
         widget = forms.widgets.Textarea(
-            attrs={'class': 'form-control', 'style': "width: 60%;"}
+            attrs={'rows': 6, 'cols': 60, 'class': 'form-control'}
         )
     )
 
@@ -37,6 +38,7 @@ class CommentForm(forms.ModelForm):
         content = self.cleaned_data.get('content')
         if len(content) < 10:
             raise forms.ValidationError('内容长度过短')
+        content = mistune.markdown(content)
         return content
     
     class Meta:
