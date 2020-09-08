@@ -4,6 +4,8 @@ from django.shortcuts import get_object_or_404
 
 from config.models import SideBar
 from .models import Post, Tag, Category
+from comment.forms import CommentForm
+from comment.models import Comment
 
 
 class CommonViewMixin:
